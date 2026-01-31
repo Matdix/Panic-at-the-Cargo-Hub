@@ -1,0 +1,8 @@
+# Godot-specific ignores
+.godot/
+*.import
+export_presets.cfg
+
+# Windows-specific ignores
+Thumbs.db
+desktop.ini
