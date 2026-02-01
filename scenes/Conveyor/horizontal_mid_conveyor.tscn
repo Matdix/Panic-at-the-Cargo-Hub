@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cfix6leg4uysp"]
+
+[ext_resource type="PackedScene" uid="uid://c2ik61nllk6ho" path="res://scenes/Conveyor/base_animated_conveyor.tscn" id="1_wd671"]
+[ext_resource type="Texture2D" uid="uid://eipbm34ldhis" path="res://assets/factory_tileset.png" id="2_cay1m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmotx"]
+atlas = ExtResource("2_cay1m")
+region = Rect2(736, 352, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0ld3"]
+atlas = ExtResource("2_cay1m")
+region = Rect2(736, 368, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpths"]
+atlas = ExtResource("2_cay1m")
+region = Rect2(736, 384, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i00e0"]
+atlas = ExtResource("2_cay1m")
+region = Rect2(736, 400, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_awj5o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmotx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0ld3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpths")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i00e0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="HorizontalMidConveyor" unique_id=1560862255 instance=ExtResource("1_wd671")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=746500545]
+sprite_frames = SubResource("SpriteFrames_awj5o")
+frame_progress = 0.45997453
+speed_scale = 0.5

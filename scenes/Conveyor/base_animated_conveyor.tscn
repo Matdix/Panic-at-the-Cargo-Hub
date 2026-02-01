@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c2ik61nllk6ho"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i84qh"]
+
+[node name="BaseAnimatedConveyor" type="Node2D" unique_id=1560862255]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=746500545]
+sprite_frames = SubResource("SpriteFrames_i84qh")
+autoplay = "default"

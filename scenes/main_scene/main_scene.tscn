@@ -1,5 +1,28 @@
-[gd_scene format=3 uid="uid://dvmedgybvbcss"]
+[gd_scene format=4 uid="uid://dvmedgybvbcss"]
+
+[ext_resource type="PackedScene" uid="uid://c3bt341ubgah3" path="res://scenes/Conveyor/horizontal_end_conveyor.tscn" id="1_kbdpr"]
+[ext_resource type="PackedScene" uid="uid://cfix6leg4uysp" path="res://scenes/Conveyor/horizontal_mid_conveyor.tscn" id="2_6loks"]
+[ext_resource type="PackedScene" uid="uid://dglff4b4yibvj" path="res://scenes/Conveyor/horizontal_start_conveyor.tscn" id="3_6ycpv"]
+[ext_resource type="PackedScene" uid="uid://c2cshkh4c66g5" path="res://scenes/Conveyor/verical_mid_conveyor.tscn" id="4_umvci"]
+[ext_resource type="PackedScene" uid="uid://8humnc3pobi8" path="res://scenes/Conveyor/vertical_end_conveyor.tscn" id="5_s5p1y"]
+[ext_resource type="PackedScene" uid="uid://cwl2xmipbas0b" path="res://scenes/Conveyor/vertical_start_conveyor.tscn" id="6_3t4qf"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ugojt"]
+resource_name = "Conveyors"
+scenes/1/scene = ExtResource("1_kbdpr")
+scenes/2/scene = ExtResource("2_6loks")
+scenes/3/scene = ExtResource("3_6ycpv")
+scenes/4/scene = ExtResource("4_umvci")
+scenes/5/scene = ExtResource("5_s5p1y")
+scenes/6/scene = ExtResource("6_3t4qf")
+
+[sub_resource type="TileSet" id="TileSet_f6yoc"]
+sources/0 = SubResource("TileSetScenesCollectionSource_ugojt")
 
 [node name="MainScene" type="Node" unique_id=394177040]
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1526793130]
+[node name="Node2D" type="Node2D" parent="." unique_id=1780102984]
+
+[node name="Conveyors" type="TileMapLayer" parent="Node2D" unique_id=1759483441]
+tile_map_data = PackedByteArray("AAAPAB8AAAApABgAAAAPAB4AAAApABcAAAAPAB0AAAApABYAAAARAB8AAAAtABYAAAAFABEAAAAAAAAAAgAEABEAAAAAAAAAAgADABEAAAAAAAAAAwAGABEAAAAAAAAAAgAHABEAAAAAAAAAAQA=")
+tile_set = SubResource("TileSet_f6yoc")
