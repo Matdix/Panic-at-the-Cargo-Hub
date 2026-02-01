@@ -21,14 +21,14 @@ scenes/6/scene = ExtResource("6_3t4qf")
 sources/0 = SubResource("TileSetScenesCollectionSource_ugojt")
 
 [node name="MainScene" type="Node" unique_id=394177040]
-metadata/_edit_horizontal_guides_ = [894.0, 14304.0]
+metadata/_edit_horizontal_guides_ = [14304.0]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1780102984]
 
 [node name="Conveyors" type="TileMapLayer" parent="Node2D" unique_id=1759483441]
 position = Vector2(-512, -512)
 scale = Vector2(64, 64)
-tile_map_data = PackedByteArray("AAAAAA0AAAAAAAAABCAAAAwAAAAAAAAABCAAAAsAAAAAAAAABCAAAAoAAAAAAAAABCAAAAkAAAAAAAAABCAAAAgAAAAAAAAABCAAAAcAAAAAAAAABCAAAAYAAAAAAAAABCAAAAUAAAAAAAAABCAAAAQAAAAAAAAABCAAAAMAAAAAAAAABCAAAAIAAAAAAAAABCAAAAEAAAAAAAAABCAAAP//AAAAAAAABCAAAP7/AAAAAAAABCAAAP3/AAAAAAAABCAAAPz/AAAAAAAABCAAAPv/AAAAAAAABCAAAPr/AAAAAAAABCAAAPn/AAAAAAAABCAAAPj/AAAAAAAABCAAAPf/AAAAAAAABCAAAPb/AAAAAAAABCAAAPX/AAAAAAAABCAAAPT/AAAAAAAABCAAAPP/AAAAAAAABCAAAA4AAAAAAAAABCAAAAAAAAAAAAAABBABAAUAAAAAAAAAAgACAAUAAAAAAAAAAgADAAUAAAAAAAAAAgD/////AAAAAAAAAhD+////AAAAAAAAAhD9////AAAAAAAAAhD8////AAAAAAAAAhABAPn/AAAAAAAAAgACAPn/AAAAAAAAAgADAPn/AAAAAAAAAgAEAPn/AAAAAAAAAQAEAAUAAAAAAAAAAQD7////AAAAAAAAARA=")
+tile_map_data = PackedByteArray("AAAAAA0AAAAAAAAABCAAAAwAAAAAAAAABCAAAAsAAAAAAAAABCAAAAoAAAAAAAAABCAAAAkAAAAAAAAABCAAAAgAAAAAAAAABCAAAAcAAAAAAAAABCAAAAYAAAAAAAAABCAAAAUAAAAAAAAABCAAAAQAAAAAAAAABCAAAAMAAAAAAAAABCAAAAIAAAAAAAAABCAAAAEAAAAAAAAABCAAAP//AAAAAAAABCAAAP7/AAAAAAAABCAAAP3/AAAAAAAABCAAAPz/AAAAAAAABCAAAPv/AAAAAAAABCAAAPr/AAAAAAAABCAAAPn/AAAAAAAABCAAAPj/AAAAAAAABCAAAPf/AAAAAAAABCAAAPb/AAAAAAAABCAAAPX/AAAAAAAABCAAAPT/AAAAAAAABCAAAPP/AAAAAAAABCAAAA4AAAAAAAAABCAAAAAAAAAAAAAABCABAAUAAAAAAAAAAgACAAUAAAAAAAAAAgADAAUAAAAAAAAAAgD/////AAAAAAAAAhD+////AAAAAAAAAhD9////AAAAAAAAAhD8////AAAAAAAAAhABAPn/AAAAAAAAAgACAPn/AAAAAAAAAgADAPn/AAAAAAAAAgAEAPn/AAAAAAAAAQAEAAUAAAAAAAAAAQD7////AAAAAAAAARA=")
 tile_set = SubResource("TileSet_f6yoc")
 
 [node name="Camera2D" type="Camera2D" parent="Node2D" unique_id=756367830]
@@ -36,3 +36,29 @@ zoom = Vector2(0.052, 0.052)
 
 [node name="Box spawner" type="Node2D" parent="Node2D" unique_id=866597992]
 script = ExtResource("7_6loks")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=784262437]
+
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=740432398]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI" unique_id=1592424548]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/HBoxContainer" unique_id=1896979080]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/HBoxContainer/VBoxContainer" unique_id=1785895516]
+layout_mode = 2
+text = "  Points : 0"
