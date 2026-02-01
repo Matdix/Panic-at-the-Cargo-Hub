@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dvmedgybvbcss"]
+
+[node name="MainScene" type="Node" unique_id=394177040]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1526793130]
