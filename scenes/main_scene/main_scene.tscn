@@ -1,11 +1,12 @@
 [gd_scene format=4 uid="uid://dvmedgybvbcss"]
 
-[ext_resource type="PackedScene" uid="uid://c3bt341ubgah3" path="res://scenes/Conveyor/horizontal_end_conveyor.tscn" id="1_kbdpr"]
-[ext_resource type="PackedScene" uid="uid://cfix6leg4uysp" path="res://scenes/Conveyor/horizontal_mid_conveyor.tscn" id="2_6loks"]
-[ext_resource type="PackedScene" uid="uid://dglff4b4yibvj" path="res://scenes/Conveyor/horizontal_start_conveyor.tscn" id="3_6ycpv"]
-[ext_resource type="PackedScene" uid="uid://c2cshkh4c66g5" path="res://scenes/Conveyor/verical_mid_conveyor.tscn" id="4_umvci"]
-[ext_resource type="PackedScene" uid="uid://8humnc3pobi8" path="res://scenes/Conveyor/vertical_end_conveyor.tscn" id="5_s5p1y"]
-[ext_resource type="PackedScene" uid="uid://cwl2xmipbas0b" path="res://scenes/Conveyor/vertical_start_conveyor.tscn" id="6_3t4qf"]
+[ext_resource type="PackedScene" uid="uid://c3bt341ubgah3" path="res://scenes/Conveyors/horizontal_end_conveyor.tscn" id="1_kbdpr"]
+[ext_resource type="PackedScene" uid="uid://cfix6leg4uysp" path="res://scenes/Conveyors/horizontal_mid_conveyor.tscn" id="2_6loks"]
+[ext_resource type="PackedScene" uid="uid://dglff4b4yibvj" path="res://scenes/Conveyors/horizontal_start_conveyor.tscn" id="3_6ycpv"]
+[ext_resource type="PackedScene" uid="uid://c2cshkh4c66g5" path="res://scenes/Conveyors/verical_mid_conveyor.tscn" id="4_umvci"]
+[ext_resource type="PackedScene" uid="uid://8humnc3pobi8" path="res://scenes/Conveyors/vertical_end_conveyor.tscn" id="5_s5p1y"]
+[ext_resource type="PackedScene" uid="uid://cwl2xmipbas0b" path="res://scenes/Conveyors/vertical_start_conveyor.tscn" id="6_3t4qf"]
+[ext_resource type="Script" uid="uid://cuv1tpkrj6q51" path="res://scenes/main_scene/box_spawner.gd" id="7_6loks"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ugojt"]
 resource_name = "Conveyors"
@@ -20,9 +21,18 @@ scenes/6/scene = ExtResource("6_3t4qf")
 sources/0 = SubResource("TileSetScenesCollectionSource_ugojt")
 
 [node name="MainScene" type="Node" unique_id=394177040]
+metadata/_edit_horizontal_guides_ = [894.0, 14304.0]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1780102984]
 
 [node name="Conveyors" type="TileMapLayer" parent="Node2D" unique_id=1759483441]
-tile_map_data = PackedByteArray("AAAPAB8AAAApABgAAAAPAB4AAAApABcAAAAPAB0AAAApABYAAAARAB8AAAAtABYAAAAFABEAAAAAAAAAAgAEABEAAAAAAAAAAgADABEAAAAAAAAAAwAGABEAAAAAAAAAAgAHABEAAAAAAAAAAQA=")
+position = Vector2(-512, -512)
+scale = Vector2(64, 64)
+tile_map_data = PackedByteArray("AAAAAA0AAAAAAAAABCAAAAwAAAAAAAAABCAAAAsAAAAAAAAABCAAAAoAAAAAAAAABCAAAAkAAAAAAAAABCAAAAgAAAAAAAAABCAAAAcAAAAAAAAABCAAAAYAAAAAAAAABCAAAAUAAAAAAAAABCAAAAQAAAAAAAAABCAAAAMAAAAAAAAABCAAAAIAAAAAAAAABCAAAAEAAAAAAAAABCAAAP//AAAAAAAABCAAAP7/AAAAAAAABCAAAP3/AAAAAAAABCAAAPz/AAAAAAAABCAAAPv/AAAAAAAABCAAAPr/AAAAAAAABCAAAPn/AAAAAAAABCAAAPj/AAAAAAAABCAAAPf/AAAAAAAABCAAAPb/AAAAAAAABCAAAPX/AAAAAAAABCAAAPT/AAAAAAAABCAAAPP/AAAAAAAABCAAAA4AAAAAAAAABCAAAAAAAAAAAAAABBABAAUAAAAAAAAAAgACAAUAAAAAAAAAAgADAAUAAAAAAAAAAgD/////AAAAAAAAAhD+////AAAAAAAAAhD9////AAAAAAAAAhD8////AAAAAAAAAhABAPn/AAAAAAAAAgACAPn/AAAAAAAAAgADAPn/AAAAAAAAAgAEAPn/AAAAAAAAAQAEAAUAAAAAAAAAAQD7////AAAAAAAAARA=")
 tile_set = SubResource("TileSet_f6yoc")
+
+[node name="Camera2D" type="Camera2D" parent="Node2D" unique_id=756367830]
+zoom = Vector2(0.052, 0.052)
+
+[node name="Box spawner" type="Node2D" parent="Node2D" unique_id=866597992]
+script = ExtResource("7_6loks")

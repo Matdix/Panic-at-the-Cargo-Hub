@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c2ik61nllk6ho"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i84qh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ti6dg"]
+size = Vector2(16, 16)
+
+[node name="BaseAnimatedConveyor" type="StaticBody2D" unique_id=2125313993]
+scale = Vector2(1.01, 1.01)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=746500545]
+sprite_frames = SubResource("SpriteFrames_i84qh")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1270850114]
+visible = false
+shape = SubResource("RectangleShape2D_ti6dg")

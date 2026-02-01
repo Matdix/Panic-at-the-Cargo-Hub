@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cc11it6mvt67n"]
+
+[ext_resource type="PackedScene" uid="uid://cmg5u6mvk0dq4" path="res://scenes/Boxes/base_box.tscn" id="1_spaqc"]
+[ext_resource type="Texture2D" uid="uid://cr1rgys74kb1w" path="res://assets/box_2.png" id="2_jp06a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04kyw"]
+size = Vector2(480, 720)
+
+[node name="Box2" unique_id=1250403769 instance=ExtResource("1_spaqc")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=425955478]
+texture = ExtResource("2_jp06a")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=85328480]
+shape = SubResource("RectangleShape2D_04kyw")

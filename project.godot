@@ -17,7 +17,16 @@ config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=2560
+window/size/viewport_height=1440
+window/size/mode=3
 window/stretch/mode="viewport"
+
+[layer_names]
+
+2d_physics/layer_1="Coveyors"
+2d_physics/layer_2="Boxes"
+2d_physics/layer_3="Arrivals"
 
 [rendering]
 
