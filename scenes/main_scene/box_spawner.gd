@@ -1,12 +1,15 @@
 extends Node2D
 
+@onready var marker_2d: Marker2D = $Marker2D
+
 const BOX_1 = preload("uid://dc0umrvd5ipww")
 const BOX_2 = preload("uid://cc11it6mvt67n")
 const BOX_3 = preload("uid://db3uwsmv188tr")
 
-var boxes_position = Vector2(0, 14304)
+var boxes_position : Vector2
 
 func _ready() -> void:
+	boxes_position = marker_2d.position
 	spawn_boxes()
 
 

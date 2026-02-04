@@ -7,9 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://8humnc3pobi8" path="res://scenes/Conveyors/vertical_end_conveyor.tscn" id="5_s5p1y"]
 [ext_resource type="PackedScene" uid="uid://cwl2xmipbas0b" path="res://scenes/Conveyors/vertical_start_conveyor.tscn" id="6_3t4qf"]
 [ext_resource type="Script" uid="uid://cuv1tpkrj6q51" path="res://scenes/main_scene/box_spawner.gd" id="7_6loks"]
+[ext_resource type="Script" uid="uid://bcvg2yxu2qoue" path="res://scenes/main_scene/conveyors.gd" id="7_s5p1y"]
+[ext_resource type="Texture2D" uid="uid://c04xq75puvsy2" path="res://assets/sign_arrow.png" id="8_6ycpv"]
+[ext_resource type="Script" uid="uid://3hhuk73nm1ja" path="res://scenes/main_scene/base_sign.gd" id="9_umvci"]
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ugojt"]
-resource_name = "Conveyors"
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_s5p1y"]
 scenes/1/scene = ExtResource("1_kbdpr")
 scenes/2/scene = ExtResource("2_6loks")
 scenes/3/scene = ExtResource("3_6ycpv")
@@ -18,24 +20,72 @@ scenes/5/scene = ExtResource("5_s5p1y")
 scenes/6/scene = ExtResource("6_3t4qf")
 
 [sub_resource type="TileSet" id="TileSet_f6yoc"]
-sources/0 = SubResource("TileSetScenesCollectionSource_ugojt")
+sources/0 = SubResource("TileSetScenesCollectionSource_s5p1y")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umvci"]
+size = Vector2(16.03125, 16.015625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5p1y"]
+size = Vector2(16.03125, 16.015625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3t4qf"]
+size = Vector2(16.03125, 16.015625)
 
 [node name="MainScene" type="Node" unique_id=394177040]
-metadata/_edit_horizontal_guides_ = [14304.0]
+metadata/_edit_horizontal_guides_ = [14304.0, -7739.0]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1780102984]
 
 [node name="Conveyors" type="TileMapLayer" parent="Node2D" unique_id=1759483441]
 position = Vector2(-512, -512)
 scale = Vector2(64, 64)
-tile_map_data = PackedByteArray("AAAAAA0AAAAAAAAABCAAAAwAAAAAAAAABCAAAAsAAAAAAAAABCAAAAoAAAAAAAAABCAAAAkAAAAAAAAABCAAAAgAAAAAAAAABCAAAAcAAAAAAAAABCAAAAYAAAAAAAAABCAAAAUAAAAAAAAABCAAAAQAAAAAAAAABCAAAAMAAAAAAAAABCAAAAIAAAAAAAAABCAAAAEAAAAAAAAABCAAAP//AAAAAAAABCAAAP7/AAAAAAAABCAAAP3/AAAAAAAABCAAAPz/AAAAAAAABCAAAPv/AAAAAAAABCAAAPr/AAAAAAAABCAAAPn/AAAAAAAABCAAAPj/AAAAAAAABCAAAPf/AAAAAAAABCAAAPb/AAAAAAAABCAAAPX/AAAAAAAABCAAAPT/AAAAAAAABCAAAPP/AAAAAAAABCAAAA4AAAAAAAAABCAAAAAAAAAAAAAABCABAAUAAAAAAAAAAgACAAUAAAAAAAAAAgADAAUAAAAAAAAAAgD/////AAAAAAAAAhD+////AAAAAAAAAhD9////AAAAAAAAAhD8////AAAAAAAAAhABAPn/AAAAAAAAAgACAPn/AAAAAAAAAgADAPn/AAAAAAAAAgAEAPn/AAAAAAAAAQAEAAUAAAAAAAAAAQD7////AAAAAAAAARA=")
+tile_map_data = PackedByteArray("AADn//v/AAAAAAAAAgDo//v/AAAAAAAAAgDp//v/AAAAAAAAAgDq//v/AAAAAAAAAgDr//v/AAAAAAAAAgDs//v/AAAAAAAAAgDt//v/AAAAAAAAAgDu//v/AAAAAAAAAgDv//v/AAAAAAAAAgDw//v/AAAAAAAAAgDx//v/AAAAAAAAAgDy//v/AAAAAAAAAgDz//v/AAAAAAAAAgD0//v/AAAAAAAAAgD1//v/AAAAAAAAAgD2//v/AAAAAAAAAgD3//v/AAAAAAAAAgD4//v/AAAAAAAAAgD5//v/AAAAAAAAAgD6//v/AAAAAAAAAgD7//v/AAAAAAAAAgD8//v/AAAAAAAAAgD9//v/AAAAAAAAAgD+//v/AAAAAAAAAgD///v/AAAAAAAAAgAAAPv/AAAAAAAAAgABAPv/AAAAAAAAAgACAPv/AAAAAAAAAgADAPv/AAAAAAAAAgAEAPv/AAAAAAAAAgAFAPv/AAAAAAAAAgAGAPv/AAAAAAAAAgAHAPv/AAAAAAAAAgAIAPv/AAAAAAAAAgAJAPv/AAAAAAAAAgAKAPv/AAAAAAAAAgALAPv/AAAAAAAAAgAMAPv/AAAAAAAAAgANAPv/AAAAAAAAAgAOAPv/AAAAAAAAAgAPAPv/AAAAAAAAAgAQAPv/AAAAAAAAAgARAPv/AAAAAAAAAgASAPv/AAAAAAAAAgATAPv/AAAAAAAAAgAUAPv/AAAAAAAAAgAVAPv/AAAAAAAAAgAWAPv/AAAAAAAAAgAXAPv/AAAAAAAAAgAYAPv/AAAAAAAAAgD2//7/AAAAAAAABAD2////AAAAAAAABAD2/wAAAAAAAAAABAD2/wEAAAAAAAAABAD2/wIAAAAAAAAABAD2/wMAAAAAAAAABAD2/wQAAAAAAAAABAAAAP7/AAAAAAAABAAAAP//AAAAAAAABAAAAAAAAAAAAAAABAAAAAEAAAAAAAAABAAAAAIAAAAAAAAABAAAAAMAAAAAAAAABAAAAAQAAAAAAAAABAAKAP7/AAAAAAAABAAKAP//AAAAAAAABAAKAAAAAAAAAAAABAAKAAEAAAAAAAAABAAKAAIAAAAAAAAABAAKAAMAAAAAAAAABAAKAAQAAAAAAAAABAD2//z/AAAAAAAABAD2//3/AAAAAAAABAAAAPz/AAAAAAAABAAAAP3/AAAAAAAABAAKAPz/AAAAAAAABAAKAP3/AAAAAAAABAA=")
 tile_set = SubResource("TileSet_f6yoc")
+script = ExtResource("7_s5p1y")
+
+[node name="FirstSignArrow" type="Sprite2D" parent="Node2D/Conveyors" unique_id=49302977]
+position = Vector2(23.070313, 71.07031)
+texture = ExtResource("8_6ycpv")
+script = ExtResource("9_umvci")
+
+[node name="Area2D" type="Area2D" parent="Node2D/Conveyors/FirstSignArrow" unique_id=1441662092]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Conveyors/FirstSignArrow/Area2D" unique_id=1681484654]
+shape = SubResource("RectangleShape2D_umvci")
+
+[node name="SecondSignArrow" type="Sprite2D" parent="Node2D/Conveyors" unique_id=877647406]
+position = Vector2(-7.0703125, -24.929688)
+texture = ExtResource("8_6ycpv")
+script = ExtResource("9_umvci")
+
+[node name="Area2D" type="Area2D" parent="Node2D/Conveyors/SecondSignArrow" unique_id=575010568]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Conveyors/SecondSignArrow/Area2D" unique_id=2117698955]
+position = Vector2(-0.0078125, 0)
+shape = SubResource("RectangleShape2D_s5p1y")
+
+[node name="ThirdSignArrow" type="Sprite2D" parent="Node2D/Conveyors" unique_id=578453794]
+position = Vector2(23.070313, -120.92969)
+texture = ExtResource("8_6ycpv")
+script = ExtResource("9_umvci")
+
+[node name="Area2D" type="Area2D" parent="Node2D/Conveyors/ThirdSignArrow" unique_id=1870419326]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Conveyors/ThirdSignArrow/Area2D" unique_id=1997590718]
+position = Vector2(-0.0078125, 0)
+shape = SubResource("RectangleShape2D_3t4qf")
 
 [node name="Camera2D" type="Camera2D" parent="Node2D" unique_id=756367830]
 zoom = Vector2(0.052, 0.052)
 
 [node name="Box spawner" type="Node2D" parent="Node2D" unique_id=866597992]
 script = ExtResource("7_6loks")
+
+[node name="Marker2D" type="Marker2D" parent="Node2D/Box spawner" unique_id=880989040]
+position = Vector2(-25417, -5258)
+scale = Vector2(64, 64)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=784262437]
 
@@ -46,6 +96,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI" unique_id=1592424548]
 layout_mode = 1

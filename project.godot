@@ -26,6 +26,7 @@ window/stretch/mode="viewport"
 2d_physics/layer_1="Coveyors"
 2d_physics/layer_2="Boxes"
 2d_physics/layer_3="Arrivals"
+2d_physics/layer_4="Areas"
 
 [rendering]
 
