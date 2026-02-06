@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c2cshkh4c66g5"]
 
-[ext_resource type="PackedScene" uid="uid://c2ik61nllk6ho" path="res://scenes/Conveyors/base_animated_conveyor.tscn" id="1_nqlio"]
+[ext_resource type="PackedScene" uid="uid://c2ik61nllk6ho" path="res://scenes/conveyors/base_animated_conveyor.tscn" id="1_nqlio"]
 [ext_resource type="Texture2D" uid="uid://eipbm34ldhis" path="res://assets/factory_tileset.png" id="2_lmalf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y42u3"]
@@ -40,9 +40,8 @@ animations = [{
 }]
 
 [node name="VericalMidConveyor" unique_id=1560862255 instance=ExtResource("1_nqlio")]
-collision_mask = 0
+collision_layer = 16
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=746500545]
 sprite_frames = SubResource("SpriteFrames_bbygd")
 frame_progress = 0.21146047
-speed_scale = 0.5

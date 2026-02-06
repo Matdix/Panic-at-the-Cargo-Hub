@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://dvmedgybvbcss"]
 
-[ext_resource type="PackedScene" uid="uid://c3bt341ubgah3" path="res://scenes/Conveyors/horizontal_end_conveyor.tscn" id="1_kbdpr"]
-[ext_resource type="PackedScene" uid="uid://cfix6leg4uysp" path="res://scenes/Conveyors/horizontal_mid_conveyor.tscn" id="2_6loks"]
-[ext_resource type="PackedScene" uid="uid://dglff4b4yibvj" path="res://scenes/Conveyors/horizontal_start_conveyor.tscn" id="3_6ycpv"]
-[ext_resource type="PackedScene" uid="uid://c2cshkh4c66g5" path="res://scenes/Conveyors/verical_mid_conveyor.tscn" id="4_umvci"]
-[ext_resource type="PackedScene" uid="uid://8humnc3pobi8" path="res://scenes/Conveyors/vertical_end_conveyor.tscn" id="5_s5p1y"]
-[ext_resource type="PackedScene" uid="uid://cwl2xmipbas0b" path="res://scenes/Conveyors/vertical_start_conveyor.tscn" id="6_3t4qf"]
+[ext_resource type="PackedScene" uid="uid://c3bt341ubgah3" path="res://scenes/conveyors/horizontal_end_conveyor.tscn" id="1_kbdpr"]
+[ext_resource type="PackedScene" uid="uid://cfix6leg4uysp" path="res://scenes/conveyors/horizontal_mid_conveyor.tscn" id="2_6loks"]
+[ext_resource type="PackedScene" uid="uid://dglff4b4yibvj" path="res://scenes/conveyors/horizontal_start_conveyor.tscn" id="3_6ycpv"]
+[ext_resource type="PackedScene" uid="uid://c2cshkh4c66g5" path="res://scenes/conveyors/verical_mid_conveyor.tscn" id="4_umvci"]
+[ext_resource type="PackedScene" uid="uid://8humnc3pobi8" path="res://scenes/conveyors/vertical_end_conveyor.tscn" id="5_s5p1y"]
+[ext_resource type="PackedScene" uid="uid://cwl2xmipbas0b" path="res://scenes/conveyors/vertical_start_conveyor.tscn" id="6_3t4qf"]
 [ext_resource type="Script" uid="uid://cuv1tpkrj6q51" path="res://scenes/main_scene/box_spawner.gd" id="7_6loks"]
 [ext_resource type="Script" uid="uid://bcvg2yxu2qoue" path="res://scenes/main_scene/conveyors.gd" id="7_s5p1y"]
 [ext_resource type="Texture2D" uid="uid://c04xq75puvsy2" path="res://assets/sign_arrow.png" id="8_6ycpv"]
@@ -31,6 +31,11 @@ size = Vector2(16.03125, 16.015625)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3t4qf"]
 size = Vector2(16.03125, 16.015625)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_s5p1y"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3t4qf"]
+normal = Vector2(-1, 0)
+
 [node name="MainScene" type="Node" unique_id=394177040]
 metadata/_edit_horizontal_guides_ = [14304.0, -7739.0]
 
@@ -44,7 +49,7 @@ tile_set = SubResource("TileSet_f6yoc")
 script = ExtResource("7_s5p1y")
 
 [node name="FirstSignArrow" type="Sprite2D" parent="Node2D/Conveyors" unique_id=49302977]
-position = Vector2(23.070313, 71.07031)
+position = Vector2(-136.92188, -55.921875)
 texture = ExtResource("8_6ycpv")
 script = ExtResource("9_umvci")
 
@@ -56,7 +61,7 @@ collision_mask = 8
 shape = SubResource("RectangleShape2D_umvci")
 
 [node name="SecondSignArrow" type="Sprite2D" parent="Node2D/Conveyors" unique_id=877647406]
-position = Vector2(-7.0703125, -24.929688)
+position = Vector2(23.09375, -55.921875)
 texture = ExtResource("8_6ycpv")
 script = ExtResource("9_umvci")
 
@@ -67,7 +72,7 @@ position = Vector2(-0.0078125, 0)
 shape = SubResource("RectangleShape2D_s5p1y")
 
 [node name="ThirdSignArrow" type="Sprite2D" parent="Node2D/Conveyors" unique_id=578453794]
-position = Vector2(23.070313, -120.92969)
+position = Vector2(183.09375, -55.921875)
 texture = ExtResource("8_6ycpv")
 script = ExtResource("9_umvci")
 
@@ -86,6 +91,18 @@ script = ExtResource("7_6loks")
 [node name="Marker2D" type="Marker2D" parent="Node2D/Box spawner" unique_id=880989040]
 position = Vector2(-25417, -5258)
 scale = Vector2(64, 64)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D" unique_id=635357999]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D" unique_id=1046766224]
+position = Vector2(0, 13847)
+shape = SubResource("WorldBoundaryShape2D_s5p1y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/StaticBody2D" unique_id=196252235]
+position = Vector2(24616, 0)
+shape = SubResource("WorldBoundaryShape2D_3t4qf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=784262437]
 

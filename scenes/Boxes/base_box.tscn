@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cmg5u6mvk0dq4"]
 
-[ext_resource type="Script" uid="uid://bbpeslmtrxdpe" path="res://scenes/Boxes/base_box.gd" id="1_mrlnt"]
+[ext_resource type="Script" uid="uid://bbpeslmtrxdpe" path="res://scenes/boxes/base_box.gd" id="1_mrlnt"]
 
 [node name="BaseBox" type="CharacterBody2D" unique_id=1250403769]
 collision_layer = 2
@@ -11,3 +11,12 @@ script = ExtResource("1_mrlnt")
 scale = Vector2(15, 15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=85328480]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1933378112]
+collision_layer = 0
+collision_mask = 49
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1681285085]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

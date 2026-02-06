@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwl2xmipbas0b"]
 
-[ext_resource type="PackedScene" uid="uid://c2ik61nllk6ho" path="res://scenes/Conveyors/base_animated_conveyor.tscn" id="1_tauka"]
+[ext_resource type="PackedScene" uid="uid://c2ik61nllk6ho" path="res://scenes/conveyors/base_animated_conveyor.tscn" id="1_tauka"]
 [ext_resource type="Texture2D" uid="uid://eipbm34ldhis" path="res://assets/factory_tileset.png" id="2_dikc8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_71i8g"]
@@ -40,8 +40,8 @@ animations = [{
 }]
 
 [node name="VerticalStartConveyor" unique_id=1560862255 instance=ExtResource("1_tauka")]
+collision_layer = 16
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=746500545]
 sprite_frames = SubResource("SpriteFrames_3sss7")
 frame_progress = 0.14979468
-speed_scale = 0.5

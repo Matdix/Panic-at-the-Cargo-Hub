@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c3bt341ubgah3"]
 
-[ext_resource type="PackedScene" uid="uid://c2ik61nllk6ho" path="res://scenes/Conveyors/base_animated_conveyor.tscn" id="1_eq3wo"]
+[ext_resource type="PackedScene" uid="uid://c2ik61nllk6ho" path="res://scenes/conveyors/base_animated_conveyor.tscn" id="1_eq3wo"]
 [ext_resource type="Texture2D" uid="uid://eipbm34ldhis" path="res://assets/factory_tileset.png" id="2_stpgv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4esec"]
@@ -44,4 +44,3 @@ animations = [{
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=746500545]
 sprite_frames = SubResource("SpriteFrames_07vp3")
 frame_progress = 0.30741268
-speed_scale = 0.5

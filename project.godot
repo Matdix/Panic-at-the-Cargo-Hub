@@ -14,19 +14,24 @@ config/name="Panic at the Cargo Hub"
 run/main_scene="uid://dvmedgybvbcss"
 config/features=PackedStringArray("4.6")
 
+[autoload]
+
+GlobalData="*uid://de4tc6sqa7uk2"
+
 [display]
 
 window/size/viewport_width=2560
 window/size/viewport_height=1440
-window/size/mode=3
 window/stretch/mode="viewport"
 
 [layer_names]
 
-2d_physics/layer_1="Coveyors"
+2d_physics/layer_1="Conveyors horizontal"
 2d_physics/layer_2="Boxes"
 2d_physics/layer_3="Arrivals"
 2d_physics/layer_4="Areas"
+2d_physics/layer_5="Conveyors vertical"
+2d_physics/layer_6="Border"
 
 [rendering]
 
