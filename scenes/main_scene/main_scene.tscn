@@ -169,6 +169,7 @@ theme_override_font_sizes/font_size = 32
 text = " Life : 3"
 
 [node name="GameOverScreen" type="Label" parent="CanvasLayer" unique_id=1348553324]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

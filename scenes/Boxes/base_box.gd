@@ -55,5 +55,5 @@ func _on_area_2d_body_entered(body: CollisionObject2D) -> void:
 				queue_free()
 	
 	if body.collision_layer == 32:
-		await get_tree().create_timer(0.9).timeout
+		GlobalData.life -= 1
 		queue_free()
