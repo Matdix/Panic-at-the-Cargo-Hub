@@ -32,6 +32,9 @@ window/stretch/mode="viewport"
 2d_physics/layer_4="Areas"
 2d_physics/layer_5="Conveyors vertical"
 2d_physics/layer_6="Border"
+2d_physics/layer_7="Exit1"
+2d_physics/layer_8="Exit2"
+2d_physics/layer_9="Exit3"
 
 [rendering]
 

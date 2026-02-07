@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dvmedgybvbcss"]
 
 [ext_resource type="PackedScene" uid="uid://c3bt341ubgah3" path="res://scenes/conveyors/horizontal_end_conveyor.tscn" id="1_kbdpr"]
+[ext_resource type="Script" uid="uid://5heqaqqu37no" path="res://scenes/main_scene/main_scene.gd" id="1_ugojt"]
 [ext_resource type="PackedScene" uid="uid://cfix6leg4uysp" path="res://scenes/conveyors/horizontal_mid_conveyor.tscn" id="2_6loks"]
 [ext_resource type="PackedScene" uid="uid://dglff4b4yibvj" path="res://scenes/conveyors/horizontal_start_conveyor.tscn" id="3_6ycpv"]
 [ext_resource type="PackedScene" uid="uid://c2cshkh4c66g5" path="res://scenes/conveyors/verical_mid_conveyor.tscn" id="4_umvci"]
@@ -10,6 +11,7 @@
 [ext_resource type="Script" uid="uid://bcvg2yxu2qoue" path="res://scenes/main_scene/conveyors.gd" id="7_s5p1y"]
 [ext_resource type="Texture2D" uid="uid://c04xq75puvsy2" path="res://assets/sign_arrow.png" id="8_6ycpv"]
 [ext_resource type="Script" uid="uid://3hhuk73nm1ja" path="res://scenes/main_scene/base_sign.gd" id="9_umvci"]
+[ext_resource type="Script" uid="uid://b44qju23rb8wd" path="res://scenes/main_scene/ui.gd" id="11_3t4qf"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_s5p1y"]
 scenes/1/scene = ExtResource("1_kbdpr")
@@ -31,12 +33,20 @@ size = Vector2(16.03125, 16.015625)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3t4qf"]
 size = Vector2(16.03125, 16.015625)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_s5p1y"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugojt"]
+size = Vector2(14.15625, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6yoc"]
+size = Vector2(14.15625, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nim2u"]
+size = Vector2(14.15625, 20)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3t4qf"]
 normal = Vector2(-1, 0)
 
 [node name="MainScene" type="Node" unique_id=394177040]
+script = ExtResource("1_ugojt")
 metadata/_edit_horizontal_guides_ = [14304.0, -7739.0]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1780102984]
@@ -44,7 +54,7 @@ metadata/_edit_horizontal_guides_ = [14304.0, -7739.0]
 [node name="Conveyors" type="TileMapLayer" parent="Node2D" unique_id=1759483441]
 position = Vector2(-512, -512)
 scale = Vector2(64, 64)
-tile_map_data = PackedByteArray("AADn//v/AAAAAAAAAgDo//v/AAAAAAAAAgDp//v/AAAAAAAAAgDq//v/AAAAAAAAAgDr//v/AAAAAAAAAgDs//v/AAAAAAAAAgDt//v/AAAAAAAAAgDu//v/AAAAAAAAAgDv//v/AAAAAAAAAgDw//v/AAAAAAAAAgDx//v/AAAAAAAAAgDy//v/AAAAAAAAAgDz//v/AAAAAAAAAgD0//v/AAAAAAAAAgD1//v/AAAAAAAAAgD2//v/AAAAAAAAAgD3//v/AAAAAAAAAgD4//v/AAAAAAAAAgD5//v/AAAAAAAAAgD6//v/AAAAAAAAAgD7//v/AAAAAAAAAgD8//v/AAAAAAAAAgD9//v/AAAAAAAAAgD+//v/AAAAAAAAAgD///v/AAAAAAAAAgAAAPv/AAAAAAAAAgABAPv/AAAAAAAAAgACAPv/AAAAAAAAAgADAPv/AAAAAAAAAgAEAPv/AAAAAAAAAgAFAPv/AAAAAAAAAgAGAPv/AAAAAAAAAgAHAPv/AAAAAAAAAgAIAPv/AAAAAAAAAgAJAPv/AAAAAAAAAgAKAPv/AAAAAAAAAgALAPv/AAAAAAAAAgAMAPv/AAAAAAAAAgANAPv/AAAAAAAAAgAOAPv/AAAAAAAAAgAPAPv/AAAAAAAAAgAQAPv/AAAAAAAAAgARAPv/AAAAAAAAAgASAPv/AAAAAAAAAgATAPv/AAAAAAAAAgAUAPv/AAAAAAAAAgAVAPv/AAAAAAAAAgAWAPv/AAAAAAAAAgAXAPv/AAAAAAAAAgAYAPv/AAAAAAAAAgD2//7/AAAAAAAABAD2////AAAAAAAABAD2/wAAAAAAAAAABAD2/wEAAAAAAAAABAD2/wIAAAAAAAAABAD2/wMAAAAAAAAABAD2/wQAAAAAAAAABAAAAP7/AAAAAAAABAAAAP//AAAAAAAABAAAAAAAAAAAAAAABAAAAAEAAAAAAAAABAAAAAIAAAAAAAAABAAAAAMAAAAAAAAABAAAAAQAAAAAAAAABAAKAP7/AAAAAAAABAAKAP//AAAAAAAABAAKAAAAAAAAAAAABAAKAAEAAAAAAAAABAAKAAIAAAAAAAAABAAKAAMAAAAAAAAABAAKAAQAAAAAAAAABAD2//z/AAAAAAAABAD2//3/AAAAAAAABAAAAPz/AAAAAAAABAAAAP3/AAAAAAAABAAKAPz/AAAAAAAABAAKAP3/AAAAAAAABAA=")
+tile_map_data = PackedByteArray("AADn//v/AAAAAAAAAgDo//v/AAAAAAAAAgDp//v/AAAAAAAAAgDq//v/AAAAAAAAAgDr//v/AAAAAAAAAgDs//v/AAAAAAAAAgDt//v/AAAAAAAAAgDu//v/AAAAAAAAAgDv//v/AAAAAAAAAgDw//v/AAAAAAAAAgDx//v/AAAAAAAAAgDy//v/AAAAAAAAAgDz//v/AAAAAAAAAgD0//v/AAAAAAAAAgD1//v/AAAAAAAAAgD2//v/AAAAAAAAAgD3//v/AAAAAAAAAgD4//v/AAAAAAAAAgD5//v/AAAAAAAAAgD6//v/AAAAAAAAAgD7//v/AAAAAAAAAgD8//v/AAAAAAAAAgD9//v/AAAAAAAAAgD+//v/AAAAAAAAAgD///v/AAAAAAAAAgAAAPv/AAAAAAAAAgABAPv/AAAAAAAAAgACAPv/AAAAAAAAAgADAPv/AAAAAAAAAgAEAPv/AAAAAAAAAgAFAPv/AAAAAAAAAgAGAPv/AAAAAAAAAgAHAPv/AAAAAAAAAgAIAPv/AAAAAAAAAgAJAPv/AAAAAAAAAgAKAPv/AAAAAAAAAgALAPv/AAAAAAAAAgAMAPv/AAAAAAAAAgANAPv/AAAAAAAAAgAOAPv/AAAAAAAAAgAPAPv/AAAAAAAAAgAQAPv/AAAAAAAAAgARAPv/AAAAAAAAAgASAPv/AAAAAAAAAgATAPv/AAAAAAAAAgAUAPv/AAAAAAAAAgAVAPv/AAAAAAAAAgAWAPv/AAAAAAAAAgAXAPv/AAAAAAAAAgAYAPv/AAAAAAAAAgD2//7/AAAAAAAABAD2////AAAAAAAABAD2/wAAAAAAAAAABAD2/wEAAAAAAAAABAD2/wIAAAAAAAAABAD2/wMAAAAAAAAABAD2/wQAAAAAAAAABAAAAP7/AAAAAAAABAAAAP//AAAAAAAABAAAAAAAAAAAAAAABAAAAAEAAAAAAAAABAAAAAIAAAAAAAAABAAAAAMAAAAAAAAABAAAAAQAAAAAAAAABAAKAP7/AAAAAAAABAAKAP//AAAAAAAABAAKAAAAAAAAAAAABAAKAAEAAAAAAAAABAAKAAIAAAAAAAAABAAKAAMAAAAAAAAABAAKAAQAAAAAAAAABAD2//z/AAAAAAAABAD2//3/AAAAAAAABAAAAPz/AAAAAAAABAAAAP3/AAAAAAAABAAKAPz/AAAAAAAABAAKAP3/AAAAAAAABAD2/wUAAAAAAAAABAD2/wYAAAAAAAAABAD2/wcAAAAAAAAABAD2/wgAAAAAAAAABAD2/wkAAAAAAAAABAD2/woAAAAAAAAABAD2/wsAAAAAAAAABAD2/wwAAAAAAAAABAD2/w0AAAAAAAAABAD2/w4AAAAAAAAABAAAAAUAAAAAAAAABAAAAAYAAAAAAAAABAAAAAcAAAAAAAAABAAAAAgAAAAAAAAABAAAAAkAAAAAAAAABAAAAAoAAAAAAAAABAAAAAsAAAAAAAAABAAAAAwAAAAAAAAABAAAAA0AAAAAAAAABAAAAA4AAAAAAAAABAAKAAUAAAAAAAAABAAKAAYAAAAAAAAABAAKAAcAAAAAAAAABAAKAAgAAAAAAAAABAAKAAkAAAAAAAAABAAKAAoAAAAAAAAABAAKAAsAAAAAAAAABAAKAAwAAAAAAAAABAAKAA0AAAAAAAAABAAKAA4AAAAAAAAABAA=")
 tile_set = SubResource("TileSet_f6yoc")
 script = ExtResource("7_s5p1y")
 
@@ -82,6 +92,30 @@ script = ExtResource("9_umvci")
 position = Vector2(-0.0078125, 0)
 shape = SubResource("RectangleShape2D_3t4qf")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D/Conveyors" unique_id=2010729924]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Conveyors/StaticBody2D" unique_id=1205557425]
+position = Vector2(-152, 250)
+shape = SubResource("RectangleShape2D_ugojt")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Conveyors" unique_id=1161433813]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Conveyors/StaticBody2D2" unique_id=1015097109]
+position = Vector2(8, 250.07813)
+shape = SubResource("RectangleShape2D_f6yoc")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Node2D/Conveyors" unique_id=377656484]
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Conveyors/StaticBody2D3" unique_id=915542301]
+position = Vector2(168, 250.078)
+shape = SubResource("RectangleShape2D_nim2u")
+
 [node name="Camera2D" type="Camera2D" parent="Node2D" unique_id=756367830]
 zoom = Vector2(0.052, 0.052)
 
@@ -95,10 +129,6 @@ scale = Vector2(64, 64)
 [node name="StaticBody2D" type="StaticBody2D" parent="Node2D" unique_id=635357999]
 collision_layer = 32
 collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D" unique_id=1046766224]
-position = Vector2(0, 13847)
-shape = SubResource("WorldBoundaryShape2D_s5p1y")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/StaticBody2D" unique_id=196252235]
 position = Vector2(24616, 0)
@@ -114,6 +144,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("11_3t4qf")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI" unique_id=1592424548]
 layout_mode = 1
@@ -127,6 +158,64 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="CanvasLayer/UI/HBoxContainer/VBoxContainer" unique_id=1785895516]
+[node name="PointsLabel" type="Label" parent="CanvasLayer/UI/HBoxContainer/VBoxContainer" unique_id=1785895516]
 layout_mode = 2
-text = "  Points : 0"
+theme_override_font_sizes/font_size = 32
+text = " Points : 0"
+
+[node name="LifeLabel" type="Label" parent="CanvasLayer/UI/HBoxContainer/VBoxContainer" unique_id=1168452909]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = " Life : 3"
+
+[node name="GameOverScreen" type="Label" parent="CanvasLayer" unique_id=1348553324]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/GameOverScreen" unique_id=1645056201]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/GameOverScreen/MarginContainer" unique_id=856242518]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="CanvasLayer/GameOverScreen/MarginContainer/MarginContainer" unique_id=998328286]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/GameOverScreen/MarginContainer/MarginContainer/Panel" unique_id=245697588]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GameOverScreen/MarginContainer/MarginContainer/Panel/CenterContainer" unique_id=171545744]
+layout_mode = 2
+
+[node name="GameOverLabel" type="Label" parent="CanvasLayer/GameOverScreen/MarginContainer/MarginContainer/Panel/CenterContainer/VBoxContainer" unique_id=2005126963]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="GameOverPointsLabel" type="Label" parent="CanvasLayer/GameOverScreen/MarginContainer/MarginContainer/Panel/CenterContainer/VBoxContainer" unique_id=920583355]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Number of points : 0"
+horizontal_alignment = 1

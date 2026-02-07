@@ -13,7 +13,7 @@ size = Vector2(1024, 2)
 
 [node name="BaseBox" type="CharacterBody2D" unique_id=1250403769]
 collision_layer = 2
-collision_mask = 4
+collision_mask = 448
 script = ExtResource("1_mrlnt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=425955478]
@@ -35,7 +35,7 @@ collision_mask = 16
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1933378112]
 collision_layer = 0
-collision_mask = 49
+collision_mask = 480
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1609283566]
