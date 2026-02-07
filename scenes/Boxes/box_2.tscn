@@ -6,9 +6,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04kyw"]
 size = Vector2(480, 720)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dbcn"]
-size = Vector2(720, 720)
-
 [node name="Box2" unique_id=1250403769 instance=ExtResource("1_spaqc")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=425955478]
@@ -16,6 +13,3 @@ texture = ExtResource("2_jp06a")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=85328480]
 shape = SubResource("RectangleShape2D_04kyw")
-
-[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(1933378112) index="0" unique_id=1681285085]
-shape = SubResource("RectangleShape2D_8dbcn")

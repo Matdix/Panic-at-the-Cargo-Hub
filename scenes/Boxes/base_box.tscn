@@ -2,6 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bbpeslmtrxdpe" path="res://scenes/boxes/base_box.gd" id="1_mrlnt"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ak5br"]
+size = Vector2(1, 511)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lk1w1"]
+size = Vector2(1, 511)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urgnt"]
+size = Vector2(1024, 2)
+
 [node name="BaseBox" type="CharacterBody2D" unique_id=1250403769]
 collision_layer = 2
 collision_mask = 4
@@ -12,11 +21,25 @@ scale = Vector2(15, 15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=85328480]
 
+[node name="ShapeCast2D" type="ShapeCast2D" parent="." unique_id=20307371]
+position = Vector2(-510, 0)
+shape = SubResource("RectangleShape2D_ak5br")
+target_position = Vector2(-2, 0)
+collision_mask = 16
+
+[node name="ShapeCast2D2" type="ShapeCast2D" parent="." unique_id=1331990557]
+position = Vector2(510, 0)
+shape = SubResource("RectangleShape2D_lk1w1")
+target_position = Vector2(-2, 0)
+collision_mask = 16
+
 [node name="Area2D" type="Area2D" parent="." unique_id=1933378112]
 collision_layer = 0
 collision_mask = 49
 input_pickable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1681285085]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1609283566]
+position = Vector2(0, 511)
+shape = SubResource("RectangleShape2D_urgnt")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
