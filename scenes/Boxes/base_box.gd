@@ -10,7 +10,7 @@ const SPEED = 16.0
 
 var direction = "horizontal"
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if !GlobalData.is_game_over:
 		if shape_cast_2d.is_colliding() and shape_cast_2d_2.is_colliding():
 			direction = "vertical"
