@@ -168,8 +168,9 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = " Life : 3"
 
-[node name="GameOverScreen" type="Label" parent="CanvasLayer" unique_id=1348553324]
+[node name="GameOverScreen" type="Control" parent="CanvasLayer" unique_id=1506671889]
 visible = false
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -220,3 +221,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Number of points : 0"
 horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GameOverScreen/MarginContainer/MarginContainer/Panel/CenterContainer/VBoxContainer" unique_id=1626121982]
+layout_mode = 2
+alignment = 1
+
+[node name="RestartButton" type="Button" parent="CanvasLayer/GameOverScreen/MarginContainer/MarginContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer" unique_id=814013517]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Restart"
+
+[connection signal="pressed" from="CanvasLayer/GameOverScreen/MarginContainer/MarginContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

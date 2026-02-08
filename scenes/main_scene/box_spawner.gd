@@ -14,18 +14,19 @@ func _ready() -> void:
 
 
 func spawn_boxes():
-	match randi() % 3:
-		0:
-			var box = BOX_1.instantiate()
-			box.position = boxes_position
-			add_child(box)
-		1:
-			var box = BOX_2.instantiate()
-			box.position = boxes_position
-			add_child(box)
-		2:
-			var box = BOX_3.instantiate()
-			box.position = boxes_position
-			add_child(box)
-	await get_tree().create_timer(25).timeout
-	spawn_boxes()
+	if !GlobalData.is_game_over:
+		match randi() % 3:
+			0:
+				var box = BOX_1.instantiate()
+				box.position = boxes_position
+				add_child(box)
+			1:
+				var box = BOX_2.instantiate()
+				box.position = boxes_position
+				add_child(box)
+			2:
+				var box = BOX_3.instantiate()
+				box.position = boxes_position
+				add_child(box)
+		await get_tree().create_timer(25).timeout
+		spawn_boxes()
