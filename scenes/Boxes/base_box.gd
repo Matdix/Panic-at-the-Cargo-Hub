@@ -6,18 +6,18 @@ extends CharacterBody2D
 
 @export var exit_number : int
 
-const SPEED = 24.0
+const SPEED = 1440.0
 
 var direction = "horizontal"
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if !GlobalData.is_game_over:
 		if shape_cast_2d.is_colliding() and shape_cast_2d_2.is_colliding():
 			direction = "vertical"
 		if direction == "horizontal":
-			position.x += SPEED
+			position.x += SPEED * delta
 		elif direction == "vertical":
-			position.y += SPEED
+			position.y += SPEED * delta
 	
 
 

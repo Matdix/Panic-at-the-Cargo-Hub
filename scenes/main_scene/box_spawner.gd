@@ -6,6 +6,8 @@ const BOX_1 = preload("uid://dc0umrvd5ipww")
 const BOX_2 = preload("uid://cc11it6mvt67n")
 const BOX_3 = preload("uid://db3uwsmv188tr")
 
+
+var box_scenes = [BOX_1, BOX_2, BOX_3]
 var boxes_position : Vector2
 
 var time_to_wait : float = 7.5
@@ -24,18 +26,9 @@ func update_time():
 
 func spawn_boxes():
 	if !GlobalData.is_game_over:
-		match randi() % 3:
-			0:
-				var box = BOX_1.instantiate()
-				box.position = boxes_position
-				add_child(box)
-			1:
-				var box = BOX_2.instantiate()
-				box.position = boxes_position
-				add_child(box)
-			2:
-				var box = BOX_3.instantiate()
-				box.position = boxes_position
-				add_child(box)
+		var random_scene : PackedScene = box_scenes.pick_random()
+		var box : CharacterBody2D = random_scene.instantiate()
+		box.position = boxes_position
+		add_child(box)
 		await get_tree().create_timer(time_to_wait).timeout
 		spawn_boxes()
