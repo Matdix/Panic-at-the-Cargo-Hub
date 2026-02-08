@@ -11,11 +11,15 @@ config_version=5
 [application]
 
 config/name="Panic at the Cargo Hub"
+config/description="A Game where you have to choose the right way for each box"
+config/version="1.0"
 run/main_scene="uid://dvmedgybvbcss"
 config/features=PackedStringArray("4.6")
+config/icon="uid://l1kt1sovxfcd"
 
 [autoload]
 
+SaveLoad="*uid://wy4cowejow1k"
 GlobalData="*uid://de4tc6sqa7uk2"
 
 [display]

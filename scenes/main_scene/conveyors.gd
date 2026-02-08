@@ -22,20 +22,26 @@ func update_frame():
 func _on_first_flip_changed(state):
 	if state == true:
 		set_cell(Vector2i(-10, -5), 0, Vector2i(0, 0), 6)
+		set_cell(Vector2i(-10, -4), 0, Vector2i(0, 0), 4)
 		
 	else:
 		set_cell(Vector2i(-10, -5), 0, Vector2i(0, 0), 2)
+		set_cell(Vector2i(-10, -4), 0, Vector2i(0, 0), 6)
 
 func _on_second_flip_changed(state):
 	if state == true:
 		set_cell(Vector2i(0, -5), 0, Vector2i(0, 0), 6)
+		set_cell(Vector2i(0, -4), 0, Vector2i(0, 0), 4)
 		
 	else:
 		set_cell(Vector2i(0, -5), 0, Vector2i(0, 0), 2)
+		set_cell(Vector2i(0, -4), 0, Vector2i(0, 0), 6)
 
 func _on_third_flip_changed(state):
 	if state == true:
 		set_cell(Vector2i(10, -5), 0, Vector2i(0, 0), 6)
+		set_cell(Vector2i(10, -4), 0, Vector2i(0, 0), 4)
 		
 	else:
 		set_cell(Vector2i(10, -5), 0, Vector2i(0, 0), 2)
+		set_cell(Vector2i(10, -4), 0, Vector2i(0, 0), 6)

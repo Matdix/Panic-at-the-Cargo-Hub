@@ -11,9 +11,11 @@ func _on_game_over():
 	game_over_points_label.text = "Number of points : " + str(GlobalData.points)
 	game_over_screen.visible = true
 	ui.visible = false
+	SaveLoad.save_data.best_points = GlobalData.points
+	
+	SaveLoad._save()
 
 
 func _on_restart_button_pressed() -> void:
-	GlobalData.life = 3
 	GlobalData.is_game_over = false
 	get_tree().reload_current_scene()

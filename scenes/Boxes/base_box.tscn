@@ -22,13 +22,13 @@ scale = Vector2(15, 15)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=85328480]
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="." unique_id=20307371]
-position = Vector2(-510, 0)
+position = Vector2(-450, 0)
 shape = SubResource("RectangleShape2D_ak5br")
 target_position = Vector2(-2, 0)
 collision_mask = 16
 
 [node name="ShapeCast2D2" type="ShapeCast2D" parent="." unique_id=1331990557]
-position = Vector2(510, 0)
+position = Vector2(450, 0)
 shape = SubResource("RectangleShape2D_lk1w1")
 target_position = Vector2(-2, 0)
 collision_mask = 16

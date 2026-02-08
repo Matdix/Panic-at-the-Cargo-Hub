@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 @export var exit_number : int
 
-const SPEED = 16.0
+const SPEED = 24.0
 
 var direction = "horizontal"
 

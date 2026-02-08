@@ -12,6 +12,10 @@ var points : int = 0
 var life : int = 3
 
 
+func _ready() -> void:
+	points = 0
+	life = 3
+
 func _physics_process(_delta: float) -> void:
 	if life == 0:
 		game_over.emit()
