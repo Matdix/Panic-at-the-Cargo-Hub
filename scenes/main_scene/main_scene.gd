@@ -7,6 +7,13 @@ extends Node
 func _ready() -> void:
 	GlobalData.game_over.connect(_on_game_over)
 
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("Exit"):
+		SaveLoad.save_data.best_points = GlobalData.points
+		SaveLoad._save()
+		get_tree().quit()
+
+
 func _on_game_over():
 	game_over_points_label.text = "Number of points : " + str(GlobalData.points)
 	game_over_screen.visible = true
