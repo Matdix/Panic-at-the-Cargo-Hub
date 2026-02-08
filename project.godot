@@ -15,6 +15,7 @@ config/description="A Game where you have to choose the right way for each box"
 config/version="1.0"
 run/main_scene="uid://dvmedgybvbcss"
 config/features=PackedStringArray("4.6")
+boot_splash/show_image=false
 config/icon="uid://l1kt1sovxfcd"
 
 [autoload]
